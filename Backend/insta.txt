@@ -1,0 +1,34 @@
+==>Authentication
+  =>register (1. user ka data save krna. 2.token user ko dena)
+  =>login
+  =>logout(token blacklisting)
+  =>[OTP based registration]
+
+==>Post
+  =>create
+  =>can see the feed
+  =>like posts (collection types)
+  =>save posts
+
+==>Users
+  =>followers
+  =>following
+
+#MODEL
+user={
+  username:String,
+  password:String,
+  email:String,
+  bio:String,
+  profile_image:String
+}
+
+#POST FEATURE
+  {
+    caption: String,
+    img_url: String,
+    user: userId,
+    createdAt: Date-time,
+  }
+
+  //edge collection documentation and indexing {learn understanding documentation}

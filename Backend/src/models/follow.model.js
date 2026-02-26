@@ -1,0 +1,30 @@
+const mongoose = require("mongoose");
+
+const followSchema = new mongoose.Schema(
+  {
+    follower: {
+      type: String,
+    },
+    followee: {
+      type: String,
+    },
+    status: {
+      type: String,
+      default: "pending",
+      enum: {
+        values: ["pending", "accepted", "rejected"],
+        message: "status can only be pending, accepted or rejected"
+      }
+    }
+  },
+  {
+    timestamps: true,
+  },
+);
+
+//koi ek user kisi ko ek hee bar follow kre ye make sure hota hai isse.
+followSchema.index({ follower:1, followee:1}, {unique: true})
+
+const followModel= mongoose.model("follows", followSchema);
+
+module.exports= followModel;
