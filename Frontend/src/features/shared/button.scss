@@ -1,0 +1,18 @@
+.button{
+    border: none;
+    outline: none;
+    padding-inline: 1rem;
+    padding-block: .5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &.primary-button{ //& is used to refer to the parent selector which is .button in this case(dono class ke sath use karna hoga) dono ke class same element par hai isliye &use hogaa
+        background-color: #f01b1b;
+        color: white;
+    }
+
+    &:active{
+        transform: scale(.98);
+    }
+}
