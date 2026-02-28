@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router';
 const Register = () => {
-const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Handle registration logic here
   }
-
 
   return (
     <main>
@@ -19,7 +19,7 @@ const handleSubmit = (e) => {
         </form>
         <p>Already have an account? <Link to="/login">Login</Link>.</p>
       </div>
-      
+
     </main>)
 }
 
