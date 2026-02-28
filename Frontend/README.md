@@ -4,7 +4,7 @@ UI
 Hook
 =>Manage krna state and API layer
 
-State
+State =>DATA ko store krna
 ->state manage
  ->loading
  ->user
