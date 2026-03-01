@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, "Password is required."],
+    select: false //select false means that when we query the user model, the password field will not be returned by default. This is a security measure to prevent the password from being exposed in API responses or logs. If we want to include the password in a query, we can explicitly select it using .select("+password") in our query. 
   },
   email: {
     type: String,

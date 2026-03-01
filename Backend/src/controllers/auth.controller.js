@@ -58,7 +58,7 @@ async function loginController(req,res){
             {username: username},
             {email: email}
         ]
-    })
+    }).select("+password"); //select +password is used to include the password field in the query result, because we have set select: false in the user model for the password field. This is necessary because we need to compare the provided password with the hashed password stored in the database.
 
     if(!user){
        return res.status(400).json({

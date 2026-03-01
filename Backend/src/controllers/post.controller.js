@@ -97,9 +97,18 @@ async function likePostController(req,res){
 
 }
 
+async function getFeedController(req,res){
+     const posts= await postModel.find().populate("user").select(); //populate tab lagate hai jab current model ke andar kisi aur model ka reference ho aur hume uska data bhi chahiye hota hai. Yaha pe post model ke andar user ka reference hai, to hum populate tab lagayenge taki hume user ka data bhi mil jaye.
+
+     res.status(200).json({
+        "message": "Posts fetched successfully.",
+         posts
+     })
+}
 module.exports = {      
     createPostController,
     getPostController,
     getPostDetailsController,
-    likePostController
+    likePostController,
+    getFeedController
 }
